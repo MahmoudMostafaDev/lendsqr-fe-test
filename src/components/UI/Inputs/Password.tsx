@@ -1,5 +1,6 @@
 import { useState } from "react";
-import "./Password.scss";
+import classes from "./Password.module.scss";
+import Input from './Input';
 interface props {
     placeholder: string;
     name: string
@@ -7,9 +8,9 @@ interface props {
 const Password: React.FC<props> = ({ placeholder, name }) => {
     const [isShown, setIsShown] = useState<boolean>(false);
     return (
-        <div className="password-container">
-            <input type={isShown ? "text" : "password"} className="input" name={name} placeholder={placeholder} />
-            <button className="show-button" onClick={() => setIsShown(perv => !perv)} >SHOW</button>
+        <div className={classes.passwordContainer}>
+            <input type={isShown ? "text" : "password"} className={classes.input} name={name} placeholder={placeholder} />
+            <button className={classes.showButton} onClick={() => setIsShown(perv => !perv)} >SHOW</button>
         </div >
     );
 }
