@@ -1,0 +1,23 @@
+@use "../MainStyle.module.scss";
+@use "../../../../styles/colors.scss";
+
+.menuContainer {
+  @extend .input;
+  position: relative;
+  padding: 0;
+
+  .menuInput {
+    @extend .input;
+    border: none;
+  }
+  .dropButton {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    background-color: transparent;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 56px;
+    border: none;
+  }
+}

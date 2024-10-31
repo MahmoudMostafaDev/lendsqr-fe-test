@@ -1,0 +1,28 @@
+@use "../../../../styles/colors.scss";
+.container {
+  position: relative;
+  .optionsContainer {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+    &.hide {
+      display: none;
+    }
+    .option {
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: "Work Sans", sans-serif;
+      color: colors.$neutral-color;
+      font-size: 16px;
+      font-weight: 500;
+      &:hover {
+        background-color: colors.$gray-color;
+      }
+      &.active {
+        background-color: colors.$gray-color;
+      }
+    }
+  }
+}
