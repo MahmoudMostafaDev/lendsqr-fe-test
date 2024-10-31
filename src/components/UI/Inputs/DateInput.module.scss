@@ -1,0 +1,29 @@
+@use "MainStyle.module.scss";
+@use "../../../styles/colors.scss";
+//hide the default input , but it still exist so when pop-up open it's position is fixed
+
+.dateContainer {
+  @extend .input;
+  position: relative;
+  padding: 0;
+
+  .dateInput {
+    @extend .input;
+    border: none;
+  }
+  .dateButton {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    background-color: transparent;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 56px;
+    border: none;
+  }
+  .actualInput {
+    width: 0;
+    height: 0;
+    border: none;
+  }
+}
