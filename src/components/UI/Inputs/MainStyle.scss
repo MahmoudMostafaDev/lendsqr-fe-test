@@ -1,0 +1,11 @@
+@use "../../../styles/colors.scss";
+
+.input {
+  width: 100%;
+  font-size: 14px;
+  font-family: "Avenir", sans-serif;
+  border: 2px solid colors.$gray-color;
+  border-radius: 5px;
+  color: colors.$neutral-color;
+  padding: 12px 15px;
+}
