@@ -1,0 +1,24 @@
+@use "MainStyle.module.scss";
+@use "../../../styles/colors.scss";
+
+.searchContainer {
+  @extend .input;
+  position: relative;
+  padding: 0;
+
+  .searchInput {
+    @extend .input;
+    border: none;
+  }
+  .searchButton {
+    position: absolute;
+    top: 50%;
+    right: -2px;
+    background-color: colors.$primary-colror;
+    transform: translateY(-50%);
+    height: calc(100% + 4px);
+    width: 56px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+  }
+}
