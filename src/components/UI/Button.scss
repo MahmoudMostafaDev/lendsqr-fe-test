@@ -1,5 +1,6 @@
 @use "../../styles/colors.scss";
 
+//select button style depend on type and variant compination
 @mixin button-style($type, $variant) {
   @if ($type == "primary") {
     border: none;
@@ -13,6 +14,7 @@
     }
   } @else if ($type == "secondary") {
     border: 2px solid;
+    background-color: transparent;
     @if ($variant == "positive") {
       color: colors.$primary-colror;
       border-color: colors.$primary-colror;
@@ -56,38 +58,3 @@
     }
   }
 }
-
-// .primary {
-//   @extend .button;
-//   border: none;
-// }
-
-// .secondary {
-//   @extend .button;
-//   border: 1px solid colors.$neutral-color;
-//   background-color: transparent;
-// }
-
-// .positive {
-//   &.primary {
-//     background-color: colors.$primary-colror;
-//     color: white;
-//   }
-//   border-color: colors.$primary-colror;
-// }
-
-// .netural {
-//   color: white;
-//   &.primary {
-//     background-color: colors.$neutral-color;
-//   }
-//   border-color: colors.$neutral-color;
-// }
-
-// .negative {
-//   color: white;
-//   &.primary {
-//     background-color: colors.$negative-color;
-//   }
-//   border-color: colors.$negative-color;
-// }
