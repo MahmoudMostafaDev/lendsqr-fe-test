@@ -1,0 +1,93 @@
+@use "../../styles/colors.scss";
+
+@mixin button-style($type, $variant) {
+  @if ($type == "primary") {
+    border: none;
+    color: white;
+    @if ($variant == "positive") {
+      background-color: colors.$primary-colror;
+    } @else if ($variant == "negative") {
+      background-color: colors.$negative-color;
+    } @else if ($variant == "netural") {
+      background-color: colors.$neutral-color;
+    }
+  } @else if ($type == "secondary") {
+    border: 2px solid;
+    @if ($variant == "positive") {
+      color: colors.$primary-colror;
+      border-color: colors.$primary-colror;
+    } @else if ($variant == "negative") {
+      color: colors.$negative-color;
+      border-color: colors.$negative-color;
+    } @else if ($variant == "netural") {
+      color: colors.$neutral-color;
+      border-color: colors.$neutral-color;
+    }
+  }
+}
+
+.button {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  &.primary {
+    &.positive {
+      @include button-style(primary, positive);
+    }
+    &.negative {
+      @include button-style(primary, negative);
+    }
+    &.netural {
+      @include button-style(primary, netural);
+    }
+  }
+  &.secondary {
+    &.positive {
+      @include button-style(secondary, positive);
+    }
+    &.negative {
+      @include button-style(secondary, negative);
+    }
+    &.netural {
+      @include button-style(secondary, netural);
+    }
+  }
+}
+
+// .primary {
+//   @extend .button;
+//   border: none;
+// }
+
+// .secondary {
+//   @extend .button;
+//   border: 1px solid colors.$neutral-color;
+//   background-color: transparent;
+// }
+
+// .positive {
+//   &.primary {
+//     background-color: colors.$primary-colror;
+//     color: white;
+//   }
+//   border-color: colors.$primary-colror;
+// }
+
+// .netural {
+//   color: white;
+//   &.primary {
+//     background-color: colors.$neutral-color;
+//   }
+//   border-color: colors.$neutral-color;
+// }
+
+// .negative {
+//   color: white;
+//   &.primary {
+//     background-color: colors.$negative-color;
+//   }
+//   border-color: colors.$negative-color;
+// }
