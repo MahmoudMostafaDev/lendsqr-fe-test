@@ -16,7 +16,7 @@ interface props {
     name: string;
     initialValue?: string;
 }
-const NumberInput: React.FC<props> = ({ placeholder, name, initialValue = "" }) => {
+const PhoneNumberInput: React.FC<props> = ({ placeholder, name, initialValue = "" }) => {
     const [value, setValue] = useState<string>(initialValue);
     function handleInput(e: React.ChangeEvent<HTMLInputElement>) {
         if (checkIsValidPhoneNumber(e.target.value)) {
@@ -33,4 +33,4 @@ const NumberInput: React.FC<props> = ({ placeholder, name, initialValue = "" }) 
     );
 }
 
-export default NumberInput;
+export default PhoneNumberInput;
