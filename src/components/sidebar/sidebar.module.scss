@@ -1,0 +1,85 @@
+@use "../../styles/colors.scss";
+@use "../../styles/fonts.scss";
+@use "../../styles/breakpoints.scss";
+
+.sidebar {
+  background-color: white;
+  padding: 20px 15px 20px 0;
+  display: flex;
+  z-index: 2;
+  flex-direction: column;
+  gap: 35px;
+  height: 90vh;
+  overflow-y: scroll;
+  &.open {
+    display: flex;
+    animation: open 0.5s ease;
+  }
+  @media (max-width: breakpoints.$md) {
+    animation: close 0.5s ease;
+    display: none;
+  }
+  .switchOrganization {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-family: fonts.$worksans;
+    color: colors.$header-color;
+    font-weight: 400;
+    margin-bottom: 10px;
+    padding-left: 25px;
+  }
+  .menuItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-family: fonts.$worksans;
+    color: colors.$header-color;
+    font-weight: 400;
+    opacity: 0.7;
+    padding-left: 25px;
+    padding: 10px 0 10px 25px;
+    cursor: pointer;
+    &.active {
+      opacity: 1;
+      background-color: rgba(57, 205, 204, 0.06);
+      border-left: 3px solid colors.$primary-colror;
+    }
+  }
+  .section {
+    h3 {
+      font-size: 12px;
+      font-family: fonts.$worksans;
+      color: colors.$header-color;
+      font-weight: 500;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      padding-left: 25px;
+    }
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+}
+@keyframes open {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 250px;
+  }
+}
+@keyframes close {
+  from {
+    width: 250px;
+    display: flex;
+  }
+  to {
+    width: 0px;
+    display: none;
+  }
+}
