@@ -1,11 +1,12 @@
 import classes from "./MainStyle.module.scss";
 interface props {
     placeholder: string;
-    name: string
+    name: string;
+    type: string;
 }
-const Input: React.FC<props> = ({ placeholder, name }) => {
+const Input: React.FC<props> = ({ placeholder, name, type }) => {
     return (
-        <input type='text' className={classes.input} name={name} placeholder={placeholder} />
+        <input type={type} className={classes.input} name={name} placeholder={placeholder} />
     );
 }
 

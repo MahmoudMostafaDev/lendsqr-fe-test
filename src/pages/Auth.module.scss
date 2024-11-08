@@ -1,0 +1,45 @@
+@use "../styles//breakpoints.scss";
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (min-width: breakpoints.$md) {
+    flex-direction: row;
+    height: 90vh;
+    align-items: center;
+  }
+  @media (min-width: breakpoints.$xl) {
+    gap: 200px;
+  }
+  .imgContainer {
+    padding: 20px;
+    align-self: flex-start;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .logo {
+      max-width: fit-content;
+    }
+    .illustration {
+      display: none;
+      @media (min-width: breakpoints.$md) {
+        display: block;
+        max-width: 400px;
+      }
+      @media (min-width: breakpoints.$lg) {
+        max-width: 500px;
+      }
+      @media (min-width: breakpoints.$xl) {
+        max-width: 550px;
+      }
+    }
+  }
+  .illustrationTwo {
+    max-width: 100%;
+    @media (min-width: breakpoints.$md) {
+      display: none;
+    }
+  }
+}

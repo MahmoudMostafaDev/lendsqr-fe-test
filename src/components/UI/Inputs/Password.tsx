@@ -10,7 +10,7 @@ const Password: React.FC<props> = ({ placeholder, name }) => {
     return (
         <div className={classes.passwordContainer}>
             <input type={isShown ? "text" : "password"} className={classes.input} name={name} placeholder={placeholder} />
-            <button className={classes.showButton} onClick={() => setIsShown(perv => !perv)} >SHOW</button>
+            <button type="button" className={classes.showButton} onClick={() => setIsShown(perv => !perv)} >SHOW</button>
         </div >
     );
 }

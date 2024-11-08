@@ -18,7 +18,7 @@ const DateInput: React.FC<props> = ({ placeholder, name }) => {
         <div className={classes.dateContainer}>
             <input type="date" name={name} onChange={handleInput} value={date} ref={datePicker} className={classes.dateButton + " " + classes.actualInput} />
             <input type='text' readOnly placeholder={placeholder} value={date} className={classes.dateInput} />
-            <button onClick={handleClick} className={classes.dateButton}>
+            <button type='button' onClick={handleClick} className={classes.dateButton}>
                 <img src={calenderIcon} />
             </button>
         </div>

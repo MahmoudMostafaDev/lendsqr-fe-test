@@ -1,0 +1,47 @@
+@use "../styles/colors.scss";
+@use "../styles/breakpoints.scss";
+@use "../styles/fonts.scss";
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 447px;
+  font-family: fonts.$avenir;
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    h1 {
+      font-size: 40px;
+      color: colors.$header-color;
+    }
+    p {
+      font-size: 16px;
+      color: colors.$neutral-color;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    a {
+      text-decoration: none;
+      color: colors.$primary-colror;
+    }
+  }
+  .error {
+    font-size: 16px;
+    color: colors.$negative-color;
+  }
+  .success {
+    font-size: 16px;
+    color: colors.$primary-colror;
+  }
+  .loading {
+    font-size: 16px;
+    color: colors.$neutral-color;
+  }
+}
