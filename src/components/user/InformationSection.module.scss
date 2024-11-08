@@ -1,0 +1,24 @@
+@use "../../styles/colors.scss";
+@use "../../styles/fonts.scss";
+@use "../../styles/breakpoints.scss";
+.container {
+  max-width: 500px;
+  margin: 20px auto;
+  border-bottom: 1px solid colors.$gray-color;
+  padding-bottom: 20px;
+  @media (min-width: breakpoints.$md) {
+    max-width: 90%;
+  }
+  h2 {
+    font-size: 16px;
+    font-family: fonts.$worksans;
+    font-weight: 500;
+    color: colors.$header-color;
+    margin-bottom: 20px;
+  }
+  .blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+}

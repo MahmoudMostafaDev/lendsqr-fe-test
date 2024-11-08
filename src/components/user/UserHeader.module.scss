@@ -1,0 +1,116 @@
+@use "../../styles/colors.scss";
+@use "../../styles/fonts.scss";
+@use "../../styles/breakpoints.scss";
+
+.userHeader {
+  background-color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  padding: 10px 20px 0 20px;
+  margin: 5px auto;
+  max-width: 500px;
+  @media (min-width: breakpoints.$md) {
+    flex-direction: row;
+    max-width: 90%;
+  }
+  .userDetails {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: breakpoints.$md) {
+      flex-direction: row;
+    }
+    .avatar {
+      max-width: 70px;
+      max-height: 70px;
+      margin: auto;
+      @media (min-width: breakpoints.$sm) {
+        margin: 15px;
+      }
+    }
+    ul {
+      display: grid;
+      list-style: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      @media (min-width: breakpoints.$sm) {
+        display: flex;
+        gap: 0px;
+        li:not(:last-child) {
+          border-right: 2px solid colors.$gray-color;
+        }
+      }
+      li {
+        margin: auto;
+        padding: 0 20px;
+        @media (min-width: breakpoints.$md) {
+          padding: 0 40px;
+        }
+      }
+      .name {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .username {
+          font-size: 22px;
+          font-family: fonts.$worksans;
+          font-weight: 600;
+          color: colors.$header-color;
+        }
+        .code {
+          font-size: 14px;
+          font-weight: 400;
+          font-family: fonts.$worksans;
+          color: colors.$neutral-color;
+        }
+      }
+      .tier {
+        p {
+          font-size: 14px;
+          font-weight: 400;
+          font-family: fonts.$worksans;
+          color: colors.$neutral-color;
+          margin-bottom: 5px;
+        }
+      }
+      .balance {
+        grid-column: 1/3;
+        .amount {
+          font-size: 22px;
+          font-family: fonts.$worksans;
+          font-weight: 600;
+          color: colors.$header-color;
+        }
+        .bank {
+          font-size: 12px;
+          font-weight: 400;
+          font-family: fonts.$worksans;
+          color: colors.$header-color;
+        }
+      }
+    }
+  }
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    list-style: none;
+    @media (min-width: breakpoints.$lg) {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+    li {
+      font-size: 16px;
+      font-family: fonts.$worksans;
+      font-weight: 400;
+      color: colors.$neutral-color;
+      text-align: center;
+      padding: 10px 0px;
+      cursor: pointer;
+    }
+    .active {
+      color: colors.$primary-colror;
+      border-bottom: 2px solid colors.$primary-colror;
+    }
+  }
+}

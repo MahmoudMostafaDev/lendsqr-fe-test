@@ -11,7 +11,7 @@ const DropdownInput: React.FC<props> = ({ value, open, placeholder, name }) => {
     return (
         <div className={classes.menuContainer}>
             <input type="text" name={name} className={classes.menuInput} value={value || ""} placeholder={placeholder} readOnly />
-            <button className={classes.dropButton} onClick={() => open((opened: boolean) => !opened)}>
+            <button type="button" className={classes.dropButton} onClick={() => open((opened: boolean) => !opened)}>
                 <img src={downArrow} />
             </button>
         </div>

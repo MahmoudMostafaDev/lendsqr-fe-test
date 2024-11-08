@@ -1,0 +1,13 @@
+@use "../../styles/breakpoints.scss";
+.container {
+  background-color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  @media (min-width: breakpoints.$md) {
+    max-width: 90%;
+  }
+}

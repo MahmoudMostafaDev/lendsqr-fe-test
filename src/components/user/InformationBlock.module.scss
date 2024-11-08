@@ -1,0 +1,22 @@
+@use "../../styles/colors.scss";
+@use "../../styles/fonts.scss";
+@use "../../styles/breakpoints.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  p:first-of-type {
+    font-size: 12px;
+    font-family: fonts.$worksans;
+    font-weight: 400;
+    color: colors.$neutral-color;
+    text-transform: uppercase;
+  }
+  p:last-of-type {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: fonts.$worksans;
+    color: colors.$header-color;
+  }
+}
