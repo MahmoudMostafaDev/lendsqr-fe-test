@@ -1,0 +1,81 @@
+@use "../../styles/colors.scss";
+@use "../../styles/fonts.scss";
+@use "../../styles/breakpoints.scss";
+.container {
+  font-family: fonts.$worksans;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 15px;
+  gap: 5px;
+  background-color: white;
+  @media (min-width: breakpoints.$sm) {
+    gap: 20px;
+  }
+  .logo {
+    width: 100px;
+  }
+  .searchButton {
+    background-color: colors.$primary-colror;
+    border-radius: 50%;
+    min-width: 30px;
+    min-height: 30px;
+    border: none;
+    @media (min-width: breakpoints.$sm) {
+      display: none;
+    }
+  }
+  .searchContainer {
+    display: none;
+    @media (min-width: breakpoints.$sm) {
+      display: block;
+      flex-grow: 1;
+      max-width: 400px;
+    }
+
+    &.show {
+      display: block;
+      position: absolute;
+      top: 100%;
+      width: 70%;
+      right: 50%;
+      transform: translateX(50%);
+      z-index: 1;
+    }
+  }
+  .userContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    a {
+      display: none;
+      color: #213f7d;
+      font-size: 16px;
+      @media (min-width: breakpoints.$md) {
+        display: block;
+        margin-right: 30px;
+      }
+    }
+    .notification {
+      cursor: pointer;
+      max-height: fit-content;
+    }
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 1px;
+      @media (min-width: breakpoints.$sm) {
+        gap: 10px;
+      }
+      .userImg {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+      .userName {
+        font-size: 16px;
+        color: #213f7d;
+      }
+    }
+  }
+}
