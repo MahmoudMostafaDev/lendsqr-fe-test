@@ -1,0 +1,37 @@
+@use "../styles/colors.scss";
+@use "../styles/fonts.scss";
+@use "../styles/breakpoints.scss";
+
+.container {
+  .body {
+    display: flex;
+    justify-content: space-between;
+    max-height: 90vh;
+    overflow-y: auto;
+    .dashboardContainer {
+      position: relative;
+      overflow-y: auto;
+      height: 90vh;
+      flex: 1;
+      background-color: colors.$background-color;
+      .sidebarButton {
+        z-index: 10;
+        background-color: none;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50vh;
+        left: 0px;
+        transform: translateY(-50%);
+        img {
+          transform: rotateZ(275deg);
+        }
+        @media (min-width: breakpoints.$md) {
+          display: none;
+        }
+      }
+    }
+  }
+}
